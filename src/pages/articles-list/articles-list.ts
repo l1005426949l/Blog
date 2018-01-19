@@ -24,6 +24,7 @@ export class ArticlesListPage {
    */
   ionViewDidLoad() {
     console.log(JSON.stringify(this.navParams) + this.navParams.get('id'));
+    ///this.activeRoute.params.subscribe(params => console.log(params["id"]));  另一种页面传参
   }
 
 

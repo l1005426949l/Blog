@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { TransferParametersProvide } from '../../providers/transfer-parameters/transfer-parameters';
+import { HttpMarkdownShowProvider } from '../../providers/http-markdown-show/http-markdown-show';
+import { MessageModel } from '../../models/message-model';
+import { MarkdownShowModel, ArticlesShowModel } from '../../models/MarkdownShowModel';
 
 /**
  * Generated class for the MarkdownShowComponent component.
@@ -13,13 +16,23 @@ import { TransferParametersProvide } from '../../providers/transfer-parameters/t
 })
 export class MarkdownShowComponent {
 
-  text: string;
   subscriber: any;
-  constructor(private transferParameters: TransferParametersProvide) {
-
-    
-    this.subscriber = this.transferParameters.ReceivedMsg(m => this.text = m.ToString());
-
+  markdownShowModel: MarkdownShowModel;
+  articlesShowModel: ArticlesShowModel;
+  /**
+   * 获取跳转后传过来的参数，发起http请求
+   * @param transferParameters 
+   * @param http 
+   */
+  constructor(private transferParameters: TransferParametersProvide, private http: HttpMarkdownShowProvider) {
+    this.subscriber = this.transferParameters.ReceivedMsg((m) => {
+      this.articlesShowModel = JSON.parse(m.value);
+      http.postMarkdownShowModel(Number(m.key))
+        .subscribe((date) => { this.markdownShowModel = date },
+          (error) => { console.error(error) });
+    });
+  }
+  ngAfterViewInit() {
   }
   ionViewWillLeave() {
     this.transferParameters.UnSubscribe(this.subscriber);

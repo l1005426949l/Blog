@@ -15,7 +15,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { createTranslateHttpLoader } from '../providers/i18n/i18n';
 import { Network } from '@ionic-native/network';
 import { TransferParametersProvide } from '../providers/transfer-parameters/transfer-parameters';
-import { ArticleListProvider } from '../providers/article-list/article-list';
+import { HttpArticleListProvider } from '../providers/http-article-list/http-article-list';
+import { HttpMarkdownShowProvider } from '../providers/http-markdown-show/http-markdown-show';
+import { MarkdownModule } from 'ngx-md';
 @NgModule({
   declarations: [
     MyApp,
@@ -26,6 +28,7 @@ import { ArticleListProvider } from '../providers/article-list/article-list';
     BrowserModule,
     ComponentsModule,
     IonicModule.forRoot(MyApp),
+    MarkdownModule.forRoot(),
     // TranslateModule.forRoot({ //语言国际化
     //   loader: {
     //     provide: TranslateLoader,
@@ -47,7 +50,8 @@ import { ArticleListProvider } from '../providers/article-list/article-list';
     TransferParametersProvide,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     Network,
-    ArticleListProvider
+    HttpArticleListProvider,
+    HttpMarkdownShowProvider
   ]
 })
 export class AppModule { }

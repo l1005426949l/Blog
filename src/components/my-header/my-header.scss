@@ -1,0 +1,14 @@
+my-header {
+  div {
+    background-color: #1abc9c ;
+    img {
+      vertical-align: middle;
+      display: inline-block;
+      box-shadow: 0 0 0 .618em rgba(0,0,0,.04);
+    }
+    a :hover{
+        opacity: .2;
+        transform: rotate(360deg);
+    }
+  }
+}

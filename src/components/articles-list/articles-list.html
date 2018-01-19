@@ -1,0 +1,27 @@
+<!-- Generated template for the ArticlesListComponent component -->
+<ion-label floating *ngFor="let itime of listModel; index as i;">
+  <ion-item-divider>
+     {{itime.beforeDays}}
+      <button ion-button item-end>查看</button>
+    </ion-item-divider>
+    <ion-item  *ngFor="let iitime of itime.items; index as ii;">
+      <ion-avatar item-start>
+        <img [src]="iitime.imgUrl">
+      </ion-avatar>
+      <ion-card (click)="gotoMyArticles(iitime.articleId,i,ii)">
+        <ion-card-header>
+          {{iitime.header}}
+        </ion-card-header>
+        <ion-card-content>
+          <ion-card-title>
+            {{iitime.title}}
+          </ion-card-title>
+          <p>
+            {{iitime.p}}
+          </p>
+        </ion-card-content>
+      </ion-card>
+      <!-- <ion-note item-end="" class="note note-ios"> {{iitime.cTime | date:'EEEE, MMMM d, y'}}</ion-note> -->
+      <ion-note item-end="" class="note note-ios"> {{iitime.cTime | date:'MMM d, y'}}</ion-note>
+    </ion-item>
+</ion-label>

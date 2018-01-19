@@ -12,8 +12,11 @@ import { ArticlesListComponent } from './articles-list/articles-list';
 import { MarkdownShowComponent } from './markdown-show/markdown-show';
 import { MarkdownModule } from 'ngx-md';
 import { IonicModule } from 'ionic-angular';
+import { DaysAgoPipe } from '../pipes/days-ago/days-ago';
 @NgModule({
     declarations: [
+
+        DaysAgoPipe,
         MyHeaderComponent,
         TitleHeaderComponent,
         LeftIntroductionComponent,

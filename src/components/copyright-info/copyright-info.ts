@@ -14,9 +14,6 @@ export class CopyrightInfoComponent {
 
   text: string;
 
-  constructor() {
-    console.log('Hello CopyrightInfoComponent Component');
-    this.text = '版权声明';
-  }
+  constructor() { }
 
 }

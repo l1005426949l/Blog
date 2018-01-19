@@ -14,12 +14,11 @@ export class TitleHeaderComponent {
 
 
   @Input()
-  text: string;
+  text: string='文章标题栏';
   /** 
    * 文章标题栏
   */
   constructor() {
-    console.log('Hello TitleHeaderComponent Component');
 
   }
 

@@ -17,8 +17,19 @@ import { NavController } from 'ionic-angular';
 export class GoHomeComponent {
 
   constructor(public navCtrl: NavController) { }
+  /**
+   * 待改进，查找有没有此页面，按情况跳转
+   * @param e 
+   */
   moveToHome(e) {
-    this.navCtrl.popToRoot();
+
+    if (this.navCtrl.getViews().length < 2) {
+      this.navCtrl.popToRoot();
+      // this.navCtrl.setRoot('HomePage');
+    } else {
+      this.navCtrl.popToRoot();
+    }
+
   }
 }
 

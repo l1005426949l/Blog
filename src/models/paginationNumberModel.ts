@@ -1,3 +1,5 @@
+import { List } from "ionic-angular";
+
 export class paginationNumberModel {
-    constructor(public psum: number, public pindex: number) { }
+    constructor(public isSelect: Array<string> = new Array<string>(), public pindex: number = -1) { }
 }

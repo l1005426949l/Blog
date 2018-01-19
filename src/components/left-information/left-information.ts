@@ -15,7 +15,6 @@ export class LeftInformationComponent {
   text: string;
 
   constructor() {
-    console.log('Hello LeftInformationComponent Component');
     this.text = '访问量';
   }
 

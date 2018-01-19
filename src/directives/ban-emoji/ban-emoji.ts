@@ -13,7 +13,6 @@ import { Platform } from 'ionic-angular';
 export class BanEmojiDirective {
 
   constructor(public el: ElementRef, private platform: Platform) {
-    console.log('Hello BanEmojiDirective Directive');
   }
   /// 禁止输入表情
   @HostListener('input')

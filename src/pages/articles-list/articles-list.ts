@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { paginationNumberModel } from '../../models/paginationNumberModel';
 
 /**
  * Generated class for the ArticlesListPage page.
@@ -16,7 +15,7 @@ import { paginationNumberModel } from '../../models/paginationNumberModel';
 })
 export class ArticlesListPage {
 
-  paginationNumber: paginationNumberModel = new paginationNumberModel(5, 1);
+  // paginationNumber: Array<paginationNumberModel> = new Array<paginationNumberModel>();
 
   constructor(public navCtrl: NavController, public navParams: NavParams) { }
   /**
@@ -25,6 +24,7 @@ export class ArticlesListPage {
   ionViewDidLoad() {
     console.log(JSON.stringify(this.navParams) + this.navParams.get('id'));
     ///this.activeRoute.params.subscribe(params => console.log(params["id"]));  另一种页面传参
+
   }
 
 

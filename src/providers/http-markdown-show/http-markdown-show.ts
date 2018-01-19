@@ -14,7 +14,6 @@ import { markdownShowUrl } from '../../assets/configs/urlConfig';
 export class HttpMarkdownShowProvider {
 
   constructor(private http: HttpClient) {
-    console.log('Hello HttpMarkdownShowProvider Provider');
   }
   /**
   * 发起分页列表页面请求

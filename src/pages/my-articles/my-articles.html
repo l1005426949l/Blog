@@ -5,21 +5,29 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>myArticles</ion-title>
+    <title-header></title-header>
+    <go-home></go-home>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
   <ion-item>
+    <!-- 页面亮度 -->
     <ion-range [(ngModel)]="brightness">
       <ion-icon range-left small name="sunny"></ion-icon>
       <ion-icon range-right name="sunny"></ion-icon>
     </ion-range>
   </ion-item>
+  <!-- Markdown -->
   <markdown-show></markdown-show>
-
+  <!-- 版权声明 -->
+  <copyright-info></copyright-info>
+  <!-- 翻页、上一页下一页 -->
+  <switch-article></switch-article>
+  <!-- 访问量 -->
+  <left-information></left-information>
+  <!-- 个人简介 -->
+  <left-introduction></left-introduction>
 </ion-content>

@@ -15,7 +15,6 @@ export class LeftIntroductionComponent {
   text: string;
 
   constructor() {
-    console.log('Hello LeftIntroductionComponent Component');
     this.text = '个人简介';
   }
 

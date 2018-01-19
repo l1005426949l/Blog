@@ -16,7 +16,7 @@
 
 <ion-content padding>
   {{'articles-list.title'}}
-<!--[className]="item.InvalidDays<=0||item.Status===0?'timeOut coupons-type':'coupons-type'"-->
+  <!--[className]="item.InvalidDays<=0||item.Status===0?'timeOut coupons-type':'coupons-type'"-->
   <ion-list>
     <ion-list-header>
       <ion-icon name="star" item-start>第一页</ion-icon>
@@ -25,7 +25,7 @@
     <articles-list></articles-list>
   </ion-list>
   <!-- 分页组件 -->
-  <pagination  [pagination]="paginationNumber"></pagination>
+  <pagination></pagination>
   <!-- 访问量组件 -->
   <left-information></left-information>
   <!-- 个人简介组件 -->

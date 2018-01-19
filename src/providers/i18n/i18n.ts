@@ -11,7 +11,6 @@ import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 @Injectable()
 export class I18nProvider {
   constructor(public http: HttpClient) {
-    console.log('Hello I18nProvider Provider');
   }
 
 }

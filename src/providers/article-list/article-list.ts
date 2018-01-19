@@ -12,7 +12,6 @@ import { catchError, map, tap, debounceTime, distinctUntilChanged, switchMap } f
 export class ArticleListProvider {
 
   constructor(public http: HttpClient) {
-    console.log('Hello ArticleListProvider Provider');
   }
   public getPostList(searchText: string, page: number = 1): Observable<string> {
     let url = 'this.postListURL';

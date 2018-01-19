@@ -22,7 +22,8 @@ import { MarkdownModule } from 'ngx-md';
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    
   ],
   imports: [
     BrowserModule,

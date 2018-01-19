@@ -24,5 +24,5 @@ export class imgHeaderTitlePTime {
      * @param cTime 发表时间
      * @param articleId 文章ID
      */
-    constructor(public imgUrl: string, public header: string, public title: string, public p: string, public cTime: number, public articleId: number) { }
+    constructor(public imgUrl: string, public header: string, public title: string, public p: string, public cTime: Date, public articleId: number) { }
 }

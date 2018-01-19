@@ -15,7 +15,7 @@ export class AsteriskPipe implements PipeTransform {
   // transform(value: string, ...args) {
   //   return value.toLowerCase();
   // }
-  transform(value: string, fromLen: number, endLen: number) {
+  transform(value: string, fromLen: number, endLen: number):string {
     if (value === undefined || value === null) {
         return value;
     }

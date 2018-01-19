@@ -19,7 +19,6 @@ export class MyResumePage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MyResumePage');
   }
 
 }

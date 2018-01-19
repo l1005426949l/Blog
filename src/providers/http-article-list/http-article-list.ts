@@ -14,7 +14,6 @@ import { articleListUrl } from '../../assets/configs/urlConfig';
 export class HttpArticleListProvider {
 
   constructor(private http: HttpClient) {
-    console.log('Hello HttpArticleListProvider Provider');
   }
   /**
    * 发起分页列表页面请求

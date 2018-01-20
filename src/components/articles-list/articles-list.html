@@ -9,9 +9,10 @@
     <ion-avatar item-start>
       <img [src]="iitime.imgUrl">
     </ion-avatar>
-    <ion-card (click)="gotoMyArticles(iitime.articleId,i,ii)">
+    <ion-card (click)="$event.stopPropagation();gotoMyArticles(iitime.articleId,i,ii)">
       <ion-card-header>
         {{iitime.header}}
+        <ion-badge color="secondary">260k</ion-badge>
       </ion-card-header>
       <ion-card-content>
         <ion-card-title>
@@ -22,6 +23,7 @@
         </p>
       </ion-card-content>
     </ion-card>
+    <!-- <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.month"></ion-datetime> -->
     <!-- <ion-note item-end="" class="note note-ios"> {{iitime.cTime | date:'EEEE, MMMM d, y'}}</ion-note> -->
     <ion-note item-end="" class="note note-ios"> {{iitime.cTime | date:'MMM d, y'}}</ion-note>
   </ion-item>

@@ -20,7 +20,7 @@
   <ion-list>
     <ion-list-header>
       <ion-icon name="star" item-start>第一页</ion-icon>
-      <button ion-button item-end (click)="buttonClick()">下一页</button>
+      <button ion-button item-end (click)="$event.stopPropagation();buttonClick()">下一页</button>
     </ion-list-header>
     <articles-list></articles-list>
   </ion-list>

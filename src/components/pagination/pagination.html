@@ -1,0 +1,20 @@
+<!-- Generated template for the PaginationComponent component -->
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <button ion-button round (click)="$event.stopPropagation();previousPage(true);">
+        <ion-icon ios="ios-arrow-dropleft-circle" md="md-arrow-dropleft-circle"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col *ngFor="let itime of pagination?.pNumber; index as i;">
+      <button [color]="itime==pagination.pindex ? 'danger' : 'primary'"
+              [outline]="itime==pagination.pindex" ion-button round
+              (click)="pageChanged($event,itime)">{{itime}}</button>
+    </ion-col>
+    <ion-col>
+      <button ion-button round (click)="$event.stopPropagation();previousPage(false);">
+        <ion-icon ios="ios-arrow-dropright-circle" md="md-arrow-dropright-circle"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

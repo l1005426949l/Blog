@@ -1,0 +1,46 @@
+<!--
+  Generated template for the ArticlesListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <my-header></my-header>
+    <go-home></go-home>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!--[className]="item.InvalidDays<=0||item.Status===0?'timeOut coupons-type':'coupons-type'"-->
+  <ion-grid>
+    <ion-row>
+      <ion-col col-10>
+        <ion-list>
+          <ion-list-header>
+            <ion-icon name="star" item-start>第0页</ion-icon>
+            <button ion-button item-end (click)="clickNextPage()">下一页</button>
+          </ion-list-header>
+          <articles-list></articles-list>
+        </ion-list>
+      </ion-col>
+      <ion-col col-2>
+        <!-- 个人简介组件 -->
+        <left-introduction></left-introduction>
+        <!-- 访问量组件 -->
+        <left-information></left-information>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <!-- 分页组件 -->
+        <pagination #pagination
+          (pageChangeEvent)="pageChanged($event)" (nextPage)="$event.stopPropagation(); previousPage(true)"></pagination>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -12,12 +12,7 @@ import { Component } from '@angular/core';
 })
 export class LeftInformationComponent {
   constructor() { }
-  ionViewDidEnter() {
-    console.log("aaaa");
-    console.log(JSON.stringify(this.option));
-    console.log("asdasd")
-
-  }
+  ionViewDidEnter() { }
   option = {
 
     title: {

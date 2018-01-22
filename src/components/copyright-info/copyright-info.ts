@@ -18,10 +18,8 @@ export class CopyrightInfoComponent {
   }
 
   ngAfterViewInit() {
-
-    // this.copyrightInfoModule = new CopyrightInfoModule('刘雨杭', window.location.host);
     this.copyrightInfoModule.author = '刘雨杭';
-    this.copyrightInfoModule.source = window.location.protocol + window.location.host
+    this.copyrightInfoModule.source = window.location.protocol + window.location.host;
   }
   /**
    * 去引用页

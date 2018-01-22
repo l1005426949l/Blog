@@ -1,0 +1,23 @@
+{
+    "author": "刘雨杭",
+    "option": {},
+    "leftIntroductionModel": {
+        "headerImgUrl": "http://echarts.baidu.com/images/bg.png",
+        "slidesImgsUrl": [
+            "http://echarts.baidu.com/images/features/scatterGL4.png",
+            "http://echarts.baidu.com/video/feature-2.jpg",
+            "http://echarts.baidu.com/images/echarts-footer-logo.png"
+        ],
+        "name": "lyh",
+        "team": "FEX 是百度「Web 前端研发部」的内部名称，其中 FE 是 Front End 的缩写，X 代表我们不仅关注前端技术，还更重视全端及全栈的能力。",
+        "position": "致力前端、数据可视化、Node等领域",
+        "journalNumber": 5,
+        "classificationNumber": 7,
+        "labelNumber": 9
+    },
+    "myHeader": {
+        "title":"我是标题",
+        "headerImgUrl":"http://echarts.baidu.com/images/echarts-footer-logo.png"
+
+    }
+}

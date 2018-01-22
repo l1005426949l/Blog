@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
-import { paginationNumberModel } from '../../models/paginationNumberModel';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { PaginationNumberModel } from '../../models/paginationNumberModel';
+import { HttpArticleListProvider } from '../../providers/http-article-list/http-article-list';
+import { PaginationConversionProvider } from '../../providers/pagination-conversion/pagination-conversion';
 
 /**
  * Generated class for the PaginationComponent component.
@@ -12,28 +14,46 @@ import { paginationNumberModel } from '../../models/paginationNumberModel';
   templateUrl: 'pagination.html'
 })
 export class PaginationComponent {
+  
+  pagination: PaginationNumberModel = new PaginationNumberModel();
 
-  pagination: paginationNumberModel = new paginationNumberModel();
-
-  constructor() {
-    for (let index = 0; index < 5; index++) {
-      if (index == 3) {
-        this.pagination.isSelect.push('...');
-      }
-      this.pagination.isSelect.push((index + 1).toString());
-    }
-    this.pagination.pindex = 2;
-  }
+  constructor(private http: HttpArticleListProvider, private conversion: PaginationConversionProvider) { }
   /**
    * 当ngAfterContentInit完毕，并且组件的视图已经初始化完毕时调用。只适用于组件。
    */
   ngAfterViewInit() {
-
+    /**
+     * 第一次加载时
+     */
+    this.http.SendMsg(1);
+    this.http.ReceivedMsg((data) => {
+      this.pagination = this.conversion.Conversion(data.pagination)
+      console.log(this.pagination);
+    })
   }
   /**
    * 当组件视图每次执行变更检测时调用。只适用于组件。
    */
   ngAfterViewChecked() {
-    // console.log('分页：' + JSON.stringify(this.pagination));
+  }
+  /**
+   * 去哪一页
+   * @param itime 页码
+   */
+  toPage(itime: number) {
+    this.http.SendMsg(itime);
+  }
+  /**
+   * 翻页
+   * @param bool t:上一页 f:下一页
+   */
+  
+  previousPage(bool: boolean) {
+    if (bool) {
+      this.http.SendMsg(this.pagination.pindex - 1);
+    } else {
+      this.http.SendMsg(this.pagination.pindex + 1);
+    };
+    console.log('调用')
   }
 }

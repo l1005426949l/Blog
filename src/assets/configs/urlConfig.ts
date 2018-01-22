@@ -11,3 +11,7 @@ export const articleListUrl = baseUrl + 'articleList.json';
  * 文章URL
  */
 export const markdownShowUrl = baseUrl + 'markdownShow.json';
+/**
+ * url，copyright-info，left-information，left-introduction，title-header 
+ */
+export const othreInfoUrl = baseUrl + 'markdownShow.json';

@@ -16,7 +16,7 @@ export class HttpMarkdownShowProvider {
   constructor(private http: HttpClient) {
   }
   /**
-  * 发起分页列表页面请求
+  * 发起markdown请求
   * @param articleId 要请求的具体的Markdown
   */
   public postMarkdownShowModel(articleId: number): Observable<MarkdownShowModel> {

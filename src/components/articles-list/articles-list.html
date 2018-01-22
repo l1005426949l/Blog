@@ -2,7 +2,7 @@
 <ion-label floating *ngFor="let itime of listModel; index as i;">
   <ion-item-divider>
     <!-- {{itime.cTime|daysAgo}} -->
-    一天前
+    {{itime.beforeDays}}
     <button ion-button item-end>查看</button>
   </ion-item-divider>
   <ion-item *ngFor="let iitime of itime.items; index as ii;">
@@ -11,8 +11,7 @@
     </ion-avatar>
     <ion-card (click)="$event.stopPropagation();gotoMyArticles(iitime.articleId,i,ii)">
       <ion-card-header>
-        {{iitime.header}}
-        <ion-badge color="secondary">260k</ion-badge>
+        <ion-badge *ngFor="let iiitime of iitime.Label" color="secondary">{{iiitime}}</ion-badge>
       </ion-card-header>
       <ion-card-content>
         <ion-card-title>

@@ -18,6 +18,8 @@ import { TransferParametersProvide } from '../providers/transfer-parameters/tran
 import { HttpArticleListProvider } from '../providers/http-article-list/http-article-list';
 import { HttpMarkdownShowProvider } from '../providers/http-markdown-show/http-markdown-show';
 import { MarkdownModule } from 'ngx-md';
+import { PaginationConversionProvider } from '../providers/pagination-conversion/pagination-conversion';
+import { HttpOthreInfoProvider } from '../providers/http-othre-info/http-othre-info';
 @NgModule({
   declarations: [
     MyApp,
@@ -52,7 +54,9 @@ import { MarkdownModule } from 'ngx-md';
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     Network,
     HttpArticleListProvider,
-    HttpMarkdownShowProvider
+    HttpMarkdownShowProvider,
+    PaginationConversionProvider,
+    HttpOthreInfoProvider
   ]
 })
 export class AppModule { }

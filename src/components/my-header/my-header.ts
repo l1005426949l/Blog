@@ -11,8 +11,7 @@ import { Component, Input } from '@angular/core';
 })
 export class MyHeaderComponent {
 
-  @Input()
-  text: string;
+  text: string='除文章内容的标题栏';
   /**
    * 除文章内容的标题栏
    */

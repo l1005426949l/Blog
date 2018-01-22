@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { TransferParametersProvide } from '../../providers/transfer-parameters/transfer-parameters';
-import { articlesListModel } from '../../models/articlesListModel';
+import { ArticlesListModel } from '../../models/articlesListModel';
 import { MessageModel } from "../../models/message-model";
 import { HttpArticleListProvider } from '../../providers/http-article-list/http-article-list';
 /**
@@ -16,7 +16,7 @@ import { HttpArticleListProvider } from '../../providers/http-article-list/http-
 })
 export class ArticlesListComponent {
 
-  listModel: Array<articlesListModel> = new Array<articlesListModel>();
+  listModel: Array<ArticlesListModel> = new Array<ArticlesListModel>();
 
   constructor(private navCtrl: NavController, private transferParameters: TransferParametersProvide, private http: HttpArticleListProvider) { }
 
@@ -32,10 +32,12 @@ export class ArticlesListComponent {
     })
   }
   /**
-   * 得移到分页按钮去请求，这个组件只负责订阅及渲染
    * 当ngAfterContentInit完毕，并且组件的视图已经初始化完毕时调用。只适用于组件
    */
   ngAfterViewInit() {
-    this.http.postArticleList(1).subscribe((date) => { this.listModel = date }, (error) => { console.error(error) });
+    this.http.ReceivedMsg((data) => {
+      this.listModel = data.articlesList;
+      console.log(this.listModel);      
+    });
   }
 }

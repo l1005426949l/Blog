@@ -13,21 +13,34 @@
 
 
 <ion-content padding>
-  <ion-item>
-    <!-- 页面亮度 -->
-    <ion-range [(ngModel)]="brightness">
-      <ion-icon range-left small name="sunny"></ion-icon>
-      <ion-icon range-right name="sunny"></ion-icon>
-    </ion-range>
-  </ion-item>
-  <!-- Markdown -->
-  <markdown-show></markdown-show>
-  <!-- 版权声明 -->
-  <copyright-info></copyright-info>
-  <!-- 翻页、上一页下一页 -->
-  <switch-article></switch-article>
-  <!-- 访问量 -->
-  <left-information></left-information>
-  <!-- 个人简介 -->
-  <left-introduction></left-introduction>
+  <ion-grid>
+    <ion-row>
+      <ion-item>
+        <!-- 页面亮度 -->
+        <ion-range [(ngModel)]="brightness">
+          <ion-icon range-left small name="sunny"></ion-icon>
+          <ion-icon range-right name="sunny"></ion-icon>
+        </ion-range>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-col col-10>
+        <!-- Markdown -->
+        <markdown-show></markdown-show>
+        <!-- 版权声明 -->
+        <copyright-info></copyright-info>
+      </ion-col>
+      <ion-col col-2>
+       
+        <!-- 个人简介 -->
+        <left-introduction></left-introduction>
+         <!-- 访问量 -->
+         <left-information></left-information>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <!-- 翻页、上一页下一页 -->
+      <switch-article></switch-article>
+    </ion-row>
+  </ion-grid>
 </ion-content>

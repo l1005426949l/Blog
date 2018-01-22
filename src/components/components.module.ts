@@ -13,6 +13,7 @@ import { MarkdownShowComponent } from './markdown-show/markdown-show';
 import { MarkdownModule } from 'ngx-md';
 import { IonicModule } from 'ionic-angular';
 import { DaysAgoPipe } from '../pipes/days-ago/days-ago';
+import { EchartsNg2Module } from 'echarts-ng2';
 @NgModule({
     declarations: [
 
@@ -29,7 +30,8 @@ import { DaysAgoPipe } from '../pipes/days-ago/days-ago';
         MarkdownShowComponent],
     imports: [
         MarkdownModule.forRoot(),
-        IonicModule
+        IonicModule,
+        EchartsNg2Module
     ],
     exports: [
         MyHeaderComponent,

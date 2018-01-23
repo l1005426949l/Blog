@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CopyrightInfoModule } from '../../models/copyrightInfoModule';
 import { NavController } from 'ionic-angular';
+import { HttpOthreInfoProvider } from '../../providers/http-othre-info/http-othre-info';
 /**
  * Generated class for the CopyrightInfoComponent component.
  *
@@ -14,11 +15,11 @@ import { NavController } from 'ionic-angular';
 export class CopyrightInfoComponent {
   copyrightInfoModule: CopyrightInfoModule = new CopyrightInfoModule();
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private http: HttpOthreInfoProvider) {
   }
 
   ngAfterViewInit() {
-    this.copyrightInfoModule.author = '刘雨杭';
+    this.http.ReceivedMsg((data) => { this.copyrightInfoModule.author = data.author })
     this.copyrightInfoModule.source = window.location.protocol + window.location.host;
   }
   /**

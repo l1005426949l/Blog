@@ -14,4 +14,4 @@ export const markdownShowUrl = baseUrl + 'markdownShow.json';
 /**
  * url，copyright-info，left-information，left-introduction，title-header 
  */
-export const othreInfoUrl = baseUrl + 'markdownShow.json';
+export const othreInfoUrl = baseUrl + 'httpOthreInfo.json';

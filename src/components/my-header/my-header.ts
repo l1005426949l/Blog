@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { MyHeaderModel } from '../../models/httpOthreInfoModel';
+import { HttpOthreInfoProvider } from '../../providers/http-othre-info/http-othre-info';
 /**
  * Generated class for the MyHeaderComponent component.
  *
@@ -11,10 +13,13 @@ import { Component, Input } from '@angular/core';
 })
 export class MyHeaderComponent {
 
-  text: string='除文章内容的标题栏';
+  myHeaderModel: MyHeaderModel;
   /**
    * 除文章内容的标题栏
    */
-  constructor() { }
+  constructor(private http: HttpOthreInfoProvider) { }
+  ngAfterViewInit() {
+    this.http.ReceivedMsg((data) => { this.myHeaderModel = data.myHeader });
+  }
 
 }

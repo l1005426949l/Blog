@@ -6,7 +6,7 @@ export class HttpOthreInfoModel {
     * @param leftIntroductionModel LeftIntroductionModel
     * @param myHeader 
     */
-    constructor(public author: string, public option: any, public leftIntroductionModel: LeftIntroductionModel, public myHeader: MyHeader) { }
+    constructor(public author: string, public option: any, public leftIntroductionModel: LeftIntroductionModel, public myHeader: MyHeaderModel) { }
 }
 export class LeftIntroductionModel {
     /**
@@ -23,7 +23,7 @@ export class LeftIntroductionModel {
     constructor(public headerImgUrl: string, public slidesImgsUrl: Array<string>, public name: string, public team: string, public position: string, public journalNumber: number, public classificationNumber: number, public labelNumber: number) { }
 }
 /**除文章之外的Header */
-export class MyHeader {
+export class MyHeaderModel {
     /**
      * 除文章之外的Header
      * @param title 出文章之外的title

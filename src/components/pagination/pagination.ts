@@ -40,7 +40,7 @@ export class PaginationComponent {
     this.http.SendMsg(1);
     this.http.ReceivedMsg((data) => {
       this.pagination = this.conversion.Conversion(data.pagination)
-      console.log(this.pagination);
+     
     })
   }
   /**
@@ -57,10 +57,8 @@ export class PaginationComponent {
   }
 
   public privePage(){
-    console.log('private page');
   }
   public nextPage(){
-    console.log("next page");
   }
 
 
@@ -74,6 +72,5 @@ export class PaginationComponent {
     } else {
       this.http.SendMsg(this.pagination.pindex + 1);
     };
-    console.log('调用')
   }
 }

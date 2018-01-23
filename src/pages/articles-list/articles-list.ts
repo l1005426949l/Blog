@@ -25,14 +25,14 @@ export class ArticlesListPage {
   }
 
   pageChanged(e){
-    console.log(e,"page changed！");
+    // console.log(e,"page changed！");
   }
 
   /**
    * 路由传参
    */
   ionViewDidLoad() {
-    console.log(JSON.stringify(this.navParams) + this.navParams.get('id'));
+    // console.log(JSON.stringify(this.navParams) + this.navParams.get('id'));
     ///this.activeRoute.params.subscribe(params => console.log(params["id"]));  另一种页面传参
   }
   /**

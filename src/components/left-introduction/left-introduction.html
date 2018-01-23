@@ -2,41 +2,35 @@
 
 <ion-card>
   <ion-card-header>
-    <img src="https://s5s5.me/wp-content/uploads/2015/05/qcode.png" alt="" srcset="">
+    <img [src]="leftIntroductionModel?.headerImgUrl" alt="" srcset="">
     <ion-slides>
-      <ion-slide>
-        <h1>Slide 1</h1>
-      </ion-slide>
-      <ion-slide>
-        <h1>Slide 2</h1>
-      </ion-slide>
-      <ion-slide>
-        <h1>Slide 3</h1>
+      <ion-slide *ngFor="let item of leftIntroductionModel?.slidesImgsUrl; index as i;">
+        <img [src]="item" alt="" srcset="">
       </ion-slide>
     </ion-slides>
   </ion-card-header>
 
   <ion-card-content>
     <ion-item>
-      名称
+      {{leftIntroductionModel?.name}}
     </ion-item>
     <ion-item>
-      公司-部门-团队
+      {{leftIntroductionModel?.team}}
     </ion-item>
     <ion-item>
-      致力前端、数据可视化、Node等领域
+      {{leftIntroductionModel?.position}}
     </ion-item>
     <ion-item>
       <ion-grid>
         <ion-row>
           <ion-col>
-            51
+            {{leftIntroductionModel?.journalNumber}}
           </ion-col>
           <ion-col>
-            54
+            {{leftIntroductionModel?.classificationNumber}}
           </ion-col>
           <ion-col>
-            62
+            {{leftIntroductionModel?.labelNumber}}
           </ion-col>
         </ion-row>
         <ion-row>
@@ -53,5 +47,4 @@
       </ion-grid>
     </ion-item>
   </ion-card-content>
-
 </ion-card>

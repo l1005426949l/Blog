@@ -37,7 +37,7 @@ export class ArticlesListComponent {
   ngAfterViewInit() {
     this.http.ReceivedMsg((data) => {
       this.listModel = data.articlesList;
-      console.log(this.listModel);      
+    
     });
   }
 }

@@ -12,9 +12,7 @@ import { Subscriber } from 'rxjs/Subscriber';
 @Injectable()
 export class HttpOthreInfoProvider {
   private subject: Subject<HttpOthreInfoModel> = new Subject<HttpOthreInfoModel>();
-  constructor(public http: HttpClient) {
-    console.log('Hello HttpOthreInfoProvider Provider');
-  }
+  constructor(public http: HttpClient) { }
   /**
    * copyright-info，left-information，left-introduction，title-header
    * 还没有实现，存数据库里

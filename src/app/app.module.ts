@@ -20,6 +20,7 @@ import { HttpMarkdownShowProvider } from '../providers/http-markdown-show/http-m
 import { MarkdownModule } from 'ngx-md';
 import { PaginationConversionProvider } from '../providers/pagination-conversion/pagination-conversion';
 import { HttpOthreInfoProvider } from '../providers/http-othre-info/http-othre-info';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -28,6 +29,7 @@ import { HttpOthreInfoProvider } from '../providers/http-othre-info/http-othre-i
     
   ],
   imports: [
+   
     BrowserModule,
     ComponentsModule,
     IonicModule.forRoot(MyApp),

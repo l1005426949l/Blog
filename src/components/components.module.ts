@@ -31,7 +31,8 @@ import { EchartsNg2Module } from 'echarts-ng2';
     imports: [
         MarkdownModule.forRoot(),
         IonicModule,
-        EchartsNg2Module
+        EchartsNg2Module,
+        
     ],
     exports: [
         MyHeaderComponent,

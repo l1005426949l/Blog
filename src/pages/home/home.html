@@ -8,8 +8,22 @@
 </ion-header>
 
 <ion-content padding>
- 我是博客主页
- <button ion-button round outline (click)="$event.stopPropagation();moveTolist($event)">
-   <ion-icon name="ios-albums">跳转到文章列表</ion-icon> 
-   </button>
+  我是博客主页
+  <button ion-button round outline (click)="$event.stopPropagation();moveTolist($event)">
+    <ion-icon name="ios-albums">跳转到文章列表</ion-icon>
+  </button>
+
+  <ion-item>
+    <ion-label color="primary" floating>二维码内容</ion-label>
+    <ion-input type="tel" placeholder="二维码内容" [(ngModel)]="text" clearInput="true">
+    </ion-input>
+  
+  </ion-item>
+  <label color="primary" floating>二维码图片
+    <input #imgInput style="display: none" type="file" accept="image/jpeg,image/jpg,image/png" (change)="imgOnload($event)">
+  </label>
+  <button ion-button>
+    <ion-icon name="ios-albums" (click)="$event.stopPropagation();createQR($event)">点击生成</ion-icon>
+  </button>
+  <div #QRimg></div>
 </ion-content>

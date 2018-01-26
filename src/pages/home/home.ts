@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import * as QArt from 'qartjs/dist/qart.min.js';
+import * as QArt from './aaa.js';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -8,8 +8,8 @@ import * as QArt from 'qartjs/dist/qart.min.js';
 export class HomePage {
 
   @ViewChild('QRimg') QRimg: ElementRef;
-  text: string;
-  imgUrl: string;
+  text: string='';
+  imgUrl: string='';
   constructor(public navCtrl: NavController) { }
   ngAfterContentInit() {
     //   qart = new QArt.default({
@@ -24,22 +24,21 @@ export class HomePage {
   imgOnload(e) {
     var reader = new FileReader();
     var $this = this;
-    console.log(e.explicitOriginalTarget.dataset.files[0]);
-    
+
     reader.readAsDataURL(e.path[0].files[0]);
     reader.onload = function () {
-      var blob = new Blob([this.result], {
-        type: 'image/png'
-    });
-    $this.imgUrl = URL.createObjectURL(blob)
-      console.log( $this.imgUrl);
+      $this.imgUrl = this.result;
+      console.log($this.imgUrl);
     }
   }
-
+  //http://fanyi.bdstatic.com/static/translation/img/header/logo_cbfea26.png ../../../assets/imgs/logo.png
   createQR(e) {
-    let qart = new QArt.default({ value: this.text, imagePath: 'https://www.baidu.com/img/bd_logo1.png', filter: 'color'});
-    console.log(qart);
-
+    let qart = new QArt.default({
+      value: this.text,
+      imagePath: this.imgUrl,
+      filter: "color",
+      version: "40"
+    });
     qart.make(this.QRimg.nativeElement);
   }
   moveTolist(e) {

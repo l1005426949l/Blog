@@ -19,7 +19,6 @@ export class MyArticlesPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MyArticlesPage');
   }
 
 }

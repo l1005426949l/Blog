@@ -2,19 +2,19 @@
 /**
  * 分页中每一页的内容
  */
-export class articlesListModel {
+export class ArticlesListModel { 
     /**
      * 
      * @param beforeDays 多少天以前 如：-1
      * @param items array自列表
      */
-    constructor(public beforeDays: number, public items: Array<imgHeaderTitlePTime>) { }
+    constructor(public beforeDays: number, public items: Array<ImgHeaderTitlePTime>) { }
 
 }
 /** 
  * 子列表内容
 */
-export class imgHeaderTitlePTime {
+export class ImgHeaderTitlePTime {
     /**
      * 构造函数
      * @param imgUrl 头像URL
@@ -24,5 +24,5 @@ export class imgHeaderTitlePTime {
      * @param cTime 发表时间
      * @param articleId 文章ID
      */
-    constructor(public imgUrl: string, public header: string, public title: string, public p: string, public cTime: number,public articleId:number) { }
+    constructor(public imgUrl: string, public header: string, public title: string, public p: string, public cTime: Date, public articleId: number) { }
 }

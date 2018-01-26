@@ -1,4 +1,50 @@
 <!-- Generated template for the LeftIntroductionComponent component -->
-<div>
-  {{text}}
-</div>
+
+<ion-card>
+  <ion-card-header>
+    <img [src]="leftIntroductionModel?.headerImgUrl" alt="" srcset="">
+    <ion-slides>
+      <ion-slide *ngFor="let item of leftIntroductionModel?.slidesImgsUrl; index as i;">
+        <img [src]="item" alt="" srcset="">
+      </ion-slide>
+    </ion-slides>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-item>
+      {{leftIntroductionModel?.name}}
+    </ion-item>
+    <ion-item>
+      {{leftIntroductionModel?.team}}
+    </ion-item>
+    <ion-item>
+      {{leftIntroductionModel?.position}}
+    </ion-item>
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            {{leftIntroductionModel?.journalNumber}}
+          </ion-col>
+          <ion-col>
+            {{leftIntroductionModel?.classificationNumber}}
+          </ion-col>
+          <ion-col>
+            {{leftIntroductionModel?.labelNumber}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            日志
+          </ion-col>
+          <ion-col>
+            分类
+          </ion-col>
+          <ion-col>
+            标签
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-card-content>
+</ion-card>

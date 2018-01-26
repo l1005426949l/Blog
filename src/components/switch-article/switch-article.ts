@@ -15,7 +15,6 @@ export class SwitchArticleComponent {
   text: string;
 
   constructor() {
-    console.log('Hello SwitchArticleComponent Component');
     this.text = '上一页下一页';
   }
 

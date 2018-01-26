@@ -49,12 +49,11 @@ export class MyApp {
    * */
   private netWatch() {
     let connectSubscription = this.network.onConnect().subscribe(() => {
-      console.log('network connected!');
+     
       // We just got a connection but we need to wait briefly
       // before we determine the connection type. Might need to wait.
       // prior to doing any api requests as well.
       setTimeout(() => {
-        console.log(this.network);
       }, 3000);
     });
   }

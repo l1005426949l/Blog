@@ -1,9 +1,9 @@
 export class MessageModel{
   constructor(
-    public title: string,
-    public content: string){
+    public key: string,
+    public value: string){
   }
   public ToString(){
-    return `${this.title}${this.content}`;
+    return `${this.key}${this.value}`;
   }
 }

@@ -1,5 +1,8 @@
 <!-- Generated template for the MarkdownShowComponent component -->
 <div>
-  {{text}}
+  标题{{articlesShowModel?.title}}
 </div>
-<div>markdown语法解析</div>
+<div>标签{{articlesShowModel?.header}}</div>
+<markdown [path]="markdownShowModel?.markdownUrl"></markdown>
+<!-- <textarea [(ngModel)]="textData"></textarea>
+<markdown [data]="textData"></markdown> -->

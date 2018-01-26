@@ -7,35 +7,43 @@ import { LeftInformationComponent } from './left-information/left-information';
 import { CopyrightInfoComponent } from './copyright-info/copyright-info';
 import { SwitchArticleComponent } from './switch-article/switch-article';
 import { GoHomeComponent } from './go-home/go-home';
-import { ShareModule } from '../pages/share/share.module';
 import { PaginationComponent } from './pagination/pagination';
 import { ArticlesListComponent } from './articles-list/articles-list';
 import { MarkdownShowComponent } from './markdown-show/markdown-show';
+import { MarkdownModule } from 'ngx-md';
+import { IonicModule } from 'ionic-angular';
+import { DaysAgoPipe } from '../pipes/days-ago/days-ago';
+import { EchartsNg2Module } from 'echarts-ng2';
 @NgModule({
-	declarations: [
-    MyHeaderComponent,
-    TitleHeaderComponent,
-    LeftIntroductionComponent,
-    LeftInformationComponent,
-    CopyrightInfoComponent,
-    SwitchArticleComponent,
-    GoHomeComponent,
-    PaginationComponent,
-    ArticlesListComponent,
-    MarkdownShowComponent],
-	imports: [
-        ShareModule
+    declarations: [
+
+        DaysAgoPipe,
+        MyHeaderComponent,
+        TitleHeaderComponent,
+        LeftIntroductionComponent,
+        LeftInformationComponent,
+        CopyrightInfoComponent,
+        SwitchArticleComponent,
+        GoHomeComponent,
+        PaginationComponent,
+        ArticlesListComponent,
+        MarkdownShowComponent],
+    imports: [
+        MarkdownModule.forRoot(),
+        IonicModule,
+        EchartsNg2Module,
+        
     ],
-	exports: [
-    MyHeaderComponent,
-    TitleHeaderComponent,
-    LeftIntroductionComponent,
-    LeftInformationComponent,
-    CopyrightInfoComponent,
-    SwitchArticleComponent,
-    GoHomeComponent,
-    PaginationComponent,
-    ArticlesListComponent,
-    MarkdownShowComponent]
+    exports: [
+        MyHeaderComponent,
+        TitleHeaderComponent,
+        LeftIntroductionComponent,
+        LeftInformationComponent,
+        CopyrightInfoComponent,
+        SwitchArticleComponent,
+        GoHomeComponent,
+        PaginationComponent,
+        ArticlesListComponent,
+        MarkdownShowComponent]
 })
-export class ComponentsModule {}
+export class ComponentsModule { }

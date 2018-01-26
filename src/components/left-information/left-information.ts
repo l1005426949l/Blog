@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpOthreInfoProvider } from '../../providers/http-othre-info/http-othre-info';
 
 /**
  * Generated class for the LeftInformationComponent component.
@@ -11,12 +12,14 @@ import { Component } from '@angular/core';
   templateUrl: 'left-information.html'
 })
 export class LeftInformationComponent {
+  option: any;
+  
+  constructor(private http: HttpOthreInfoProvider) {
 
-  text: string;
-
-  constructor() {
-    console.log('Hello LeftInformationComponent Component');
-    this.text = '访问量';
   }
+  ngAfterViewInit() {
+    this.http.ReceivedMsg((data) => { this.option = data.option });
+  }
+  ionViewDidEnter() { }
 
 }

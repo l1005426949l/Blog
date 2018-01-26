@@ -9,7 +9,7 @@
 
 **主要功能（MajorFunction）**
 
-- [x] 支持Markdown写博客
+- [Y] 支持Markdown写博客
 - [x] 完善离线缓存
 - [x] 美化界面
     - [x] 没有后台

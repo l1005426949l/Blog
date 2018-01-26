@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import * as QArt from './aaa.js';
+import * as QArt from '../../assets/aaa.js';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
